@@ -46,7 +46,7 @@
 <body>
 
 <header>
-    <h1>🚀 Welcome to KK FUNDA vali learning devopssss SRE Portal 🚀</h1>
+    <h1>🚀 Welcome to KK FUNDA vali learning devopsss well SRE Portal 🚀</h1>
     <h3>Training | Development | Consulting</h3>
 </header>
 
