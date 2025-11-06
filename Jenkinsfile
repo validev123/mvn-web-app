@@ -35,12 +35,12 @@ node
 } catch (e) {
     // If there was an exception thrown, the build failed
     currentBuild.result = "FAILED"
-    throw e
+
   } finally {
     // Success or failure, always send notifications
     notifyBuild(currentBuild.result)
   }
-}
+} // node ending
 
 def notifyBuild(String buildStatus = 'STARTED') {
   // build status of null means successful
@@ -64,5 +64,5 @@ def notifyBuild(String buildStatus = 'STARTED') {
       colorCode = '#FF0000'
     }
   // Send notifications
-    slackSend (color: colorCode, message: summary)
+    slackSend (color: colorCode, message: summary, channel: '#prod')
 }
