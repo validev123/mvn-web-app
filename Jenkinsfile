@@ -7,6 +7,7 @@ node
   def mavenHomeee =tool name: "maven3.9.11"
     try
 {
+   notifyBuild('STARTED')
   stage('git checkout')
    {
     git branch: 'development', credentialsId: '0f77403d-c90c-492e-8a54-ae72101bacb5', url: 'https://github.com/validev123/mvn-web-app.git'
