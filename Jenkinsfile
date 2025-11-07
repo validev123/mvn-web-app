@@ -30,7 +30,7 @@ node
     sh """
         curl -u sai:password \
         --upload-file /var/lib/jenkins/workspace/jio-dev-scriptedway-PL/target/maven-web-application.war \
-        "http://18.60.107.228:8080/manager/text/deploy?path=/maven-web-application&update=true"
+        "http://18.60.186.168/:8080/manager/text/deploy?path=/maven-web-application&update=true"
     """
   }
 
