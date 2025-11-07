@@ -8,6 +8,7 @@ pipeline {
         stage('git-checkout') {
             steps
               {
+              notifyBuild('STARTED')
               git branch: 'development', url: 'https://github.com/validev123/mvn-web-app.git'
                 
             } // git step ending
