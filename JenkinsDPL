@@ -1,0 +1,54 @@
+pipeline {
+    agent any
+    tools 
+      {
+       maven "maven3.9.11"
+     } 
+    stages {
+        stage('git-checkout') {
+            steps
+              {
+              git branch: 'development', url: 'https://github.com/validev123/mvn-web-app.git'
+                
+            } // git step ending
+        } // git-checkout stage ending
+
+    stage('maven build') {
+      steps
+        {
+         sh "mvn clean package"
+        }
+      } //maven stage ending
+     stage ('SQ report') 
+        {
+       steps
+          {
+          sh "mvn sonar:sonar"
+        }
+      } // SQ ending
+     stage('nexus upload') 
+         {
+        steps
+           {
+          sh "mvn deploy"
+        }
+        
+      } // nexus ending
+   
+
+     stage('Deploy to Tomcat')
+         {
+       steps
+        {
+        echo "Deploying WAR file using curl..."
+
+          sh """
+          curl -u sai:password \
+          --upload-file /var/lib/jenkins/workspace/alpha-declaratice-PL-dev/target/maven-web-application.war \
+          "http://18.60.186.168:8080/manager/text/deploy?path=/maven-web-application&update=true"
+          """
+     }
+  } // tomcat ending
+   } // stages ending
+
+} //pipeline ending
