@@ -46,7 +46,7 @@
 <body>
 
 <header>
-    <marque><h1>🚀 Welcome to devops my world 🚀</h1></marque>
+    <marquee><h1>🚀 Welcome to devops my world 🚀</h1></marquee>
     <h3>Training | Development | Consulting</h3>
 </header>
 
