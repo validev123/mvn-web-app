@@ -46,7 +46,7 @@ pipeline {
           sh """
           curl -u sai:password \
           --upload-file /var/lib/jenkins/workspace/alpha-declaratice-PL-dev/target/maven-web-application.war \
-          "http://16.112.12.97/manager/text/deploy?path=/maven-web-application&update=true"
+          "http://16.112.12.97:8080/manager/text/deploy?path=/maven-web-application&update=true"
           """
      }
   } // tomcat ending
