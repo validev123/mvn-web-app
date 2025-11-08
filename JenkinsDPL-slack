@@ -45,7 +45,7 @@ pipeline {
 
           sh """
           curl -u sai:password \
-          --upload-file /var/lib/jenkins/workspace/jio-dev-scriptedway-PL/target/maven-web-application.war \
+          --upload-file /var/lib/jenkins/workspace/alpha-declaratice-PL-dev/target/maven-web-application.war \
           "http://16.112.12.97/manager/text/deploy?path=/maven-web-application&update=true"
           """
      }
